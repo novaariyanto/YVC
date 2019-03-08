@@ -1,0 +1,197 @@
+{
+  "project_info": {
+    "project_number": "492612501795",
+    "firebase_url": "https://your-videos-channel-e25cc.firebaseio.com",
+    "project_id": "your-videos-channel-e25cc",
+    "storage_bucket": "your-videos-channel-e25cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492612501795:android:f830d80faa7b39aa",
+        "android_client_info": {
+          "package_name": "com.solodroid.solovid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492612501795-hfoprfebv5vctpu8io4oj5abti3o8e7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBroNfFKTAkHbSN3odnV3t8d1zAU5FrrPQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492612501795:android:9e96ed93c6f7c9e3",
+        "android_client_info": {
+          "package_name": "com.solodroid.yourvideoschannelstartapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492612501795-hfoprfebv5vctpu8io4oj5abti3o8e7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBroNfFKTAkHbSN3odnV3t8d1zAU5FrrPQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492612501795:android:52c3dc1fcda9edbf",
+        "android_client_info": {
+          "package_name": "com.rndtechnosoft.vidzapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492612501795-hfoprfebv5vctpu8io4oj5abti3o8e7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBroNfFKTAkHbSN3odnV3t8d1zAU5FrrPQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492612501795:android:bfe3b4efc9ae8eb3",
+        "android_client_info": {
+          "package_name": "com.solodroid.yourrecipesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492612501795-hfoprfebv5vctpu8io4oj5abti3o8e7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBroNfFKTAkHbSN3odnV3t8d1zAU5FrrPQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492612501795:android:5e1aec64b161d5e2",
+        "android_client_info": {
+          "package_name": "com.solodev.noviapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492612501795-hfoprfebv5vctpu8io4oj5abti3o8e7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBroNfFKTAkHbSN3odnV3t8d1zAU5FrrPQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492612501795:android:bd6ec160808e03fb",
+        "android_client_info": {
+          "package_name": "com.app.yourvideoschannel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492612501795-hfoprfebv5vctpu8io4oj5abti3o8e7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBroNfFKTAkHbSN3odnV3t8d1zAU5FrrPQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,580 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Your Videos Channel 3.2.0 - Android Studio Project Configuration</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="Solodroid Developer">
+	<meta name="copyright" content="Solodroid Developer">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2018-02-13T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	<script>
+		$(function() {
+       $('a[href*="#"]:not([href="#"])').click(function() {
+         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+           var target = $(this.hash);
+           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html, body').animate({
+               scrollTop: target.offset().top
+             }, 300);
+             return false;
+           }
+         }
+       });
+     });
+	</script>
+	
+	<style>
+		html{background-color:#EEEEEE;color:#383838;}
+		::-moz-selection{background:#333636;color:#00DFFC;}
+		::selection{background:#333636;color:#00DFFC;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.png);}
+		a{color:#008C9E;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #008C9E, #006673);
+			  background-image: -ms-linear-gradient(top, #008C9E, #006673);
+			  background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#343838), to(#006673));
+			  background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+			  background-image: -o-linear-gradient(top, #008C9E, #006673);
+			  background-image: linear-gradient(top, #008C9E, #006673);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+			  border-color: #006673 #006673 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #008C9E #008C9E #bfbfbf;
+		  background-color: #006673;
+		}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#343838;color:#FFFFFF;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+		#documenter_sidebar ul{border-top:1px solid #212424;}
+		#documenter_sidebar ul a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+		#documenter_sidebar ul a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_sidebar ul a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-your-videos-channel-300">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#about_the_files" title="About the Files">About the Files</a></li>
+			<li><a href="#getting_started" title="Getting Started">Getting Started</a></li>
+			<li><a href="#import_project_in_android_studio" title="Import Project in Android Studio">Import Project in Android Studio</a></li>
+			<li><a href="#get_google_services_json_for_fcm_push_notification_configuration" title="Get google-services.json for FCM Push Notification Configuration">Get google-services.json for FCM Push Notification Configuration</a></li>
+			<li><a href="#change_application_package_name" title="Change Application Package Name">Change Application Package Name</a></li>
+			<li><a href="#server_connection_and_api_key_configuration" title="Server Connection and API Key Configuration">Server Connection and API Key Configuration</a></li>
+			<li><a href="#get_youtube_api_key" title="Get YouTube API key">Get YouTube API key</a></li>
+			<li><a href="#admob_configuration" title="AdMob Configuration">AdMob Configuration</a></li>
+			<li><a href="#change_application_logo" title="Change Application Logo">Change Application Logo</a></li>
+			<li><a href="#change_application_color" title="Change Application Color">Change Application Color</a></li>
+			<li><a href="#change_application_name_and_text_inside_the_application" title="Change Application Name and Text Inside the Application">Change Application Name and Text Inside the Application</a></li>
+			<li><a href="#splash_image_and_other_required_image_assets" title="Splash Image and other Required Image Assets">Splash Image and other Required Image Assets</a></li>
+			<li><a href="#optional_layout_customization" title="Optional Layout Customization">Optional Layout Customization</a></li>
+			<li><a href="#rtl_right_to_left_mode" title="RTL (Right To Left) Mode">RTL (Right To Left) Mode</a></li>
+			<li><a href="#generated_signed_apk" title="Generated Signed APK">Generated Signed APK</a></li>
+			<li><a href="#graphics" title="Graphics">Graphics</a></li>
+			<li><a href="#rating" title="Rating">Rating</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Solodroid Developer 2018<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Your Videos Channel 3.2.0</h1>
+	<h2>Android Studio Project Configuration</h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 17/05/2015</li>
+	<li>latest update: 25/09/2018</li>
+	<li>by: Solodroid Developer</li>
+	<li><a href=""></a></li>
+	<li>email: <a href="mailto:&#100;&#101;&#118;&#101;&#108;&#111;&#112;&#101;&#114;&#46;&#115;&#111;&#108;&#111;&#100;&#114;&#111;&#105;&#100;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#100;&#101;&#118;&#101;&#108;&#111;&#112;&#101;&#114;&#46;&#115;&#111;&#108;&#111;&#100;&#114;&#111;&#105;&#100;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+	</ul>
+	<p>Thank you for purchasing my app. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form here. Thanks so much!</p>
+	</section>
+	
+	<section id="about_the_files">
+	<div class="page-header"><h3>About the Files</h3><hr class="notop"></div>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Your Videos Channel is a mobile video system which run under Android platform that used for your own Video channel application and support YouTube integration. With powerful and Responsive Admin Panel can manage unlimited category and upload video item or video source from youtube, also can change admin username and password with generate password, etc. This application created by Android for client side and then PHP MySQL for Admin side. Run under Android platform which is the most popular operating system in the world. Using this application you can save your money and time in creating application for your own Videos Application.</p>
+</section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting Started</h3><hr class="notop"></div>
+<div>
+	Before doing installation, you need to do the following things :</div>
+<div>
+	&nbsp;</div>
+<div>
+	Install tools that requires for developing Android app such as :</div>
+<ul>
+	<li>
+		<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"><strong>Java Development Kit</strong></a></li>
+	<li>
+		<a href="https://developer.android.com/studio/index.html"><strong>Android Studio</strong></a>&nbsp;version 3.2.0 or higher&nbsp;as the Official Android IDE.</li>
+</ul>
+<div>
+	&nbsp;</div>
+<div>
+	For updated tutorial about how to install them, you can see and Download from <a href="https://developer.android.com/studio/index.html"><strong>Android Developer website</strong></a>.</div>
+<div>
+	If you do all things above, you can go to the next step.</div>
+</section>
+<section id="import_project_in_android_studio">
+	<div class="page-header"><h3>Import Project in Android Studio</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		1. Open Android Studio &rarr; Open an existing Android Studio Project</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		2. New window will opened &rarr; Browse to directory where you place&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">YourVideosChannel&nbsp;</span>project &nbsp;&rarr; Ok</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		3. Wait for few minutes until all process import has finished</div>
+</div>
+<p>
+	<img alt="" src="assets/images/image_4.jpg" style="width: 782px; height: 489px;"></p>
+<p>
+	<img alt="" src="assets/images/image_9.jpg" style="width: 400px; height: 490px;"></p>
+</section>
+<section id="get_google_services_json_for_fcm_push_notification_configuration">
+	<div class="page-header"><h3>Get google-services.json for FCM Push Notification Configuration</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			1. Before you do step change the package name, you must do this step for firebase project configuration</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			2. Please note : this step is mandatory to generate&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">google-services.json</span>&nbsp;file</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Firebase Project Configuration</span></div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			<img src="assets/images/image_16.png" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; width: 1024px; height: 487px;"></div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			3. Visit&nbsp;<a href="https://console.firebase.google.com/" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;" target="_blank">Firebase console</a></div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			4. Please register or log in first and then select create new project. In the dialog window enter the name of the project that will be created and the contents of the state and then click the create project to continue.</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			<img src="assets/images/image_12.png" style="margin: 0px; padding: 0px; border: 0px solid; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; width: 400px; height: 413px;"></div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			5. After successfully creating a project on Firebase then the page will be redirected to the dashboard project that has been made.</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			<img src="assets/images/image_11.png" style="margin: 0px; padding: 0px; border: 0px solid; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; width: 600px; height: 227px;"></div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			6. Then on the dashboard Firebase select Add Firebase to your Android app. In the next dialog window enter the name of the Android application package and SHA1 of fingerprints Certificate (optional).</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			<img src="assets/images/image_13.png" style="margin: 0px; padding: 0px; border: 0px solid; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; width: 600px; height: 500px;"></div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			7. Next will download the configuration file&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">json google-services.json</span>&nbsp;automatically, which will be added in the directory app in the Android project.</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			<img src="assets/images/image_15.png" style="margin: 0px; padding: 0px; border: 0px solid; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; width: 600px; height: 581px;"></div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			<img src="assets/images/image_10.jpg" style="margin: 0px; padding: 0px; border: 0px solid; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; width: 1024px; height: 575px;"></div>
+	</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="change_application_package_name">
+	<div class="page-header"><h3>Change Application Package Name</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Required :</span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	1. Open&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Gradle Scripts &rarr; build.gradle (Module: app)</span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	2. Change the application ID with your own id name,</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	3. Standard naming procedure :&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">com.yourdomainname.yourappname</span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	4. Click&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Sync Now</span>.</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	5. Change the id as unique as possible, because application id is very important used if you want to publish the application to the google play.</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;">6.<b>&nbsp;Important : your applicationId or package name must same with your package name that you&rsquo;ve create on firebase console when you generate google-services.json</b></span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<img alt="" src="assets/images/image_2.jpg" style="width: 1024px; height: 575px;"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<span style="font-family: inherit; font-style: inherit; font-weight: 700;">Optional (recommended) :</span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	7. Click once on your package and then click setting icon on Android Studio.</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	8. Close / Unselect&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Compact Empty Middle Packages</span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	9. Then, right click your package and rename it.</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<img alt="" src="assets/images/image_6.jpg" style="width: 1024px; height: 575px;"></div>
+</section>
+<section id="server_connection_and_api_key_configuration">
+	<div class="page-header"><h3>Server Connection and API Key Configuration</h3><hr class="notop"></div>
+<div>
+	<span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif;">1. Open&nbsp;</span><span style="color: rgb(56, 56, 56); font-family: inherit; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; vertical-align: baseline;">app &rarr; java &rarr; yourpackagename &rarr;</span><span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif;">&nbsp;</span><span style="color: rgb(56, 56, 56); font-family: inherit; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; vertical-align: baseline;">Config.java</span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	2. Replace with your admin panel url</div>
+<pre style="color: rgb(0, 0, 0); font-family: Consolas;">
+//put your admin panel url<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 128);">
+public static final </span>String <span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: italic; font-family: inherit; vertical-align: baseline; color: rgb(102, 14, 122);">ADMIN_PANEL_URL </span>= <span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 128, 0);">&quot;http://10.0.2.2/your_videos_channel&quot;</span>;</pre>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	3. for security reason, put your API Key which generated from your admin panel</p>
+<pre style="color: rgb(0, 0, 0); font-family: Consolas;">
+<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: italic; font-family: inherit; vertical-align: baseline; color: rgb(128, 128, 128);">//put your api key which obtained from admin panel
+</span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 128);">public static final </span>String <span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: italic; font-family: inherit; vertical-align: baseline; color: rgb(102, 14, 122);">API_KEY </span>= <span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 128, 0);">&quot;cda11Tw3RbNJSrVnQ62g08ALXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>;</pre>
+</section>
+<section id="get_youtube_api_key">
+	<div class="page-header"><h3>Get YouTube API key</h3><hr class="notop"></div>
+<div>
+	1. Go to <a href="https://console.developers.google.com/"><strong>Google Developers Console </strong></a>and log in with your Google account.</div>
+<div>
+	2. Create the new project (name does not matter for the plugin).</div>
+<div>
+	3. Go to your project (by clicking on its name in the list).</div>
+<div>
+	4. In the sidebar on the left, expand APIs &amp; Services&nbsp;<span style="font-family: inherit; font-style: inherit; color: rgb(56, 56, 56); margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; vertical-align: baseline;">&rarr;</span><span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif;">&nbsp;Library</span>. In the list of APIs go to <strong>YouTube Data API (v3)</strong> and make sure that it&rsquo;s <strong>enabled (Enable API).</strong></div>
+<div>
+	5. In the same sidebar click Credentials. Then click on Create New Key and choose API key.</div>
+<div>
+	6. Copy API key and paste it to <strong>Strings.xml </strong>in the <strong>youtube_api_key </strong>string tag.</div>
+<p>
+	<iframe allowfullscreen="" frameborder="0" height="379" src="http://www.youtube.com/embed/eAkyaEHMJUE" width="720"></iframe></p>
+</section>
+<section id="admob_configuration">
+	<div class="page-header"><h3>AdMob Configuration</h3><hr class="notop"></div>
+<div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Change AdMob Banner &amp; Interstitial Unit ID</span></div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		&nbsp;</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		1. Login to your <strong><a href="https://apps.admob.com/">AdMob account</a></strong>, create an app and generate your ad unit id</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		2.&nbsp;please change the ID in app &rarr;&nbsp;res &rarr;&nbsp;value &rarr;&nbsp;<span style="font-family: inherit; font-style: inherit; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; vertical-align: baseline;">strings.xml</span></div>
+	<pre style="color: rgb(0, 0, 0); font-family: Consolas;">
+<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: italic; font-family: inherit; vertical-align: baseline; color: rgb(128, 128, 128);">&lt;!--AdMob Ads--&gt;</span>
+&lt;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 128);">string </span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255);">name=</span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 128, 0);">&quot;admob_banner_unit_id&quot;</span>&gt;ca-app-pub-5107556562590198/5385770869&lt;/<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 128);">string</span>&gt;
+&lt;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 128);">string </span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255);">name=</span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 128, 0);">&quot;admob_interstitial_unit_id&quot;</span>&gt;ca-app-pub-5107556562590198/2292703667&lt;/<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 128);">string</span>&gt;
+</pre>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		&nbsp;</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Enable and Disable Ads</span></div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		&nbsp;</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		2. Open &rarr; app &rarr; java &rarr; yourpackagename &rarr;&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Config.java</span></div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		&nbsp; &nbsp; - value&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">true&nbsp;</span>to Enable AdMob Ads</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		&nbsp; &nbsp; - value&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">false&nbsp;</span>to Disable AdMob Ads</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		<pre style="color: rgb(0, 0, 0); font-family: Consolas;">
+<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: italic; font-family: inherit; vertical-align: baseline; color: rgb(128, 128, 128);">//Ads Configuration
+</span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: italic; font-family: inherit; vertical-align: baseline; color: rgb(128, 128, 128);">//set true to enable or set false to disable
+</span>public static final boolean <span style="font-family: &quot;Courier New&quot;; font-size: 9pt; color: rgb(102, 14, 122); font-weight: bold; font-style: italic;">ENABLE_ADMOB_BANNER_ADS </span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt;">= </span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt; color: rgb(0, 0, 128); font-weight: bold;">true</span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt;">;
+</span>public static final boolean <span style="font-family: &quot;Courier New&quot;; font-size: 9pt; color: rgb(102, 14, 122); font-weight: bold; font-style: italic;">ENABLE_ADMOB_INTERSTITIAL_ADS </span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt;">= </span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt; color: rgb(0, 0, 128); font-weight: bold;">true</span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt;">;
+</span>public static final int <span style="font-family: &quot;Courier New&quot;; font-size: 9pt; color: rgb(102, 14, 122); font-weight: bold; font-style: italic;">ADMOB_INTERSTITIAL_ADS_INTERVAL </span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt;">= </span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt; color: rgb(0, 0, 255);">3</span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt;">;
+</span>public static final boolean <span style="font-family: &quot;Courier New&quot;; font-size: 9pt; color: rgb(102, 14, 122); font-weight: bold; font-style: italic;">ENABLE_ADMOB_INTERSTITIAL_ADS_ON_CLICK_VIDEO </span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt;">= </span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt; color: rgb(0, 0, 128); font-weight: bold;">false</span><span style="font-family: &quot;Courier New&quot;; font-size: 9pt;">;</span></pre>
+	</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="change_application_logo">
+	<div class="page-header"><h3>Change Application Logo</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12.8px; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	1. Open Android Studio &rarr; File &rarr; New &rarr; <span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-size: 12.8px; font-family: inherit; vertical-align: baseline;">Image Asset</span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12.8px; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	2. You can choose 2 types of your icon type, that is Launcher Icon <strong>(Adaptive and Legacy)</strong> or <strong>(Legacy Only)</strong></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12.8px; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	3. Recommended to use&nbsp;<span style="font-size: 12.8px;">Launcher Icon&nbsp;</span><strong style="font-size: 12.8px;">(Adaptive and Legacy)</strong></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12.8px; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	4. Browse and choose your image file icon (.png) format with square dimension and start customize your icon</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12.8px; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	5. Make sure the resource name is &quot;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-size: 12.8px; font-family: inherit; vertical-align: baseline;">ic_launcher</span>&quot; &rarr; Next &rarr; Finish</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12.8px; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12.8px; font-family: inherit; vertical-align: baseline; list-style: decimal;">
+	<img alt="" src="assets/images/image_7.jpg" style="width: 840px; height: 585px;"></div>
+</section>
+<section id="change_application_color">
+	<div class="page-header"><h3>Change Application Color</h3><hr class="notop"></div>
+<div>
+	1. Open Android Studio &rarr; app &rarr; res &rarr; values &rarr; <strong>colors.xml</strong></div>
+<div>
+	2. Enter your color code inside each of strings tag :</div>
+<div>
+	<pre style="font-family: &quot;Courier New&quot;; font-size: 9pt;">
+<span style="color:#808080;font-style:italic;">&lt;!--app main color--&gt; 
+</span>&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorPrimary&quot;</span>&gt;#E62117&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorPrimaryDark&quot;</span>&gt;#BA1B12&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorAccent&quot;</span>&gt;#ECA324&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+
+<span style="color:#808080;font-style:italic;">&lt;!--swipe down refresh animation color--&gt; 
+</span>&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorOrange&quot;</span>&gt;#FF9900&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorGreen&quot;</span>&gt;#009900&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorBlue&quot;</span>&gt;#000099&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorRed&quot;</span>&gt;#ff0015&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+
+<span style="color:#808080;font-style:italic;">&lt;!--tab color--&gt; 
+</span>&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorTabIndicator&quot;</span>&gt;#FFFFFF&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorTabSelectedText&quot;</span>&gt;#FFFFFF&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorTabText&quot;</span>&gt;#000000&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+
+<span style="color:#808080;font-style:italic;">&lt;!--others--&gt; 
+</span>&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorWhite&quot;</span>&gt;#FFFFFF&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorBlack&quot;</span>&gt;#000000&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorGrey&quot;</span>&gt;#96989A&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorDarkGrey&quot;</span>&gt;#4D4D4D&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorText&quot;</span>&gt;#202020&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorRipple&quot;</span>&gt;#C2C2C2&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorCardView&quot;</span>&gt;#FFFFFF&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorBackground&quot;</span>&gt;#FFFFFF&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorToolbarGrey&quot;</span>&gt;#757575&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt; 
+&lt;<span style="color:#000080;font-weight:bold;">color </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;colorLine&quot;</span>&gt;#DEDEDE&lt;/<span style="color:#000080;font-weight:bold;">color</span>&gt;</pre>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="change_application_name_and_text_inside_the_application">
+	<div class="page-header"><h3>Change Application Name and Text Inside the Application</h3><hr class="notop"></div>
+<div>
+	1. Open Android Studio &rarr; app &rarr; res &rarr; values &rarr; <strong>strings.xml</strong></div>
+<div>
+	2. Change value name in each strings tag according your needs.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Note : </strong><em>You need to change string tag values on strings.xml file, because&nbsp;this is contain text components which shown inside the application besides content that is retrieved from the admin panel.</em></div>
+<pre style="color: rgb(0, 0, 0); font-family: &quot;Courier New&quot;; font-size: 9pt;">
+<span style="color: rgb(128, 128, 128); font-style: italic;">&lt;!--application name--&gt;</span>
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;app_name&quot;</span>&gt;Your Videos Channel&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+
+<span style="color:#808080;font-style:italic;">&lt;!--tab name--&gt;
+</span>&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;tab_recent&quot;</span>&gt;Recent Videos&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;tab_category&quot;</span>&gt;Category&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+
+<span style="color:#808080;font-style:italic;">&lt;!--AdMob--&gt;
+</span>&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;admob_banner_id&quot;</span>&gt;ca-app-pub-3940256099942544/6300978111&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;admob_interstitial_id&quot;</span>&gt;ca-app-pub-3940256099942544/1033173712&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+
+<span style="color:#808080;font-style:italic;">&lt;!--navigation drawer menu name--&gt;
+</span>&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_recent&quot;</span>&gt;Recent Videos&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_category&quot;</span>&gt;Category&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_favorite&quot;</span>&gt;Favorite&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_separator_name&quot;</span>&gt;Other&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_rate&quot;</span>&gt;Rate&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_more&quot;</span>&gt;More&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_share&quot;</span>&gt;Share&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_about&quot;</span>&gt;About&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_settings&quot;</span>&gt;Settings&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_open&quot;</span>&gt;Open navigation drawer&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;drawer_close&quot;</span>&gt;Close navigation drawer&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+
+<span style="color:#808080;font-style:italic;">&lt;!-- play store application link i.e more apps --&gt;
+</span>&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;play_more_apps&quot;</span>&gt;https://play.google.com/store/apps/developer?id=Solodroid&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;share_text&quot;</span>&gt;I Would like to share this with you. Here You Can Download This Application from PlayStore&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+
+<span style="color:#808080;font-style:italic;">&lt;!-- youtube --&gt;
+</span>&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;youtube_api_key&quot;</span>&gt;AIzaSyC6ML892sHXPqGuz2BDRS2J8dUcFEldszo&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;error_player&quot;</span>&gt;There was an error initializing the YouTubePlayer (%1$s)&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+
+<span style="color:#808080;font-style:italic;">&lt;!--app about information--&gt;
+</span>&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;about_app_name&quot;</span>&gt;Application Name&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;about_app_version&quot;</span>&gt;Build Version&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;about_app_email&quot;</span>&gt;Email&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;about_app_copyright&quot;</span>&gt;Copyright&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;about_app_rate&quot;</span>&gt;Rate&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;about_app_more&quot;</span>&gt;More&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;about_app_privacy_policy&quot;</span>&gt;Terms <span style="color:#0000ff;font-weight:bold;">&amp;amp; </span>Policies&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;sub_about_app_version&quot;</span>&gt;Version 3.0.0&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;sub_about_app_email&quot;</span>&gt;&#100;&#101;&#118;&#101;&#108;&#111;&#112;&#101;&#114;&#46;&#115;&#111;&#108;&#111;&#100;&#114;&#111;&#105;&#100;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;sub_about_app_copyright&quot;</span>&gt;Copyright <span style="color:#0000ff;font-weight:bold;">&amp;#169; </span>2018 Solodroid Developer \n All rights reserved&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;sub_about_app_rate&quot;</span>&gt;Give your rate and feedback&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;sub_about_app_more&quot;</span>&gt;More apps from developer&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;sub_about_app_privacy_policy&quot;</span>&gt;Terms <span style="color:#0000ff;font-weight:bold;">&amp;amp; </span>Policies of Your Videos Channel&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+
+<span style="color:#808080;font-style:italic;">&lt;!--network &amp; error message--&gt;
+</span>&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;network_required&quot;</span>&gt;Required Internet to Play Video!&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;failed_title_text&quot;</span>&gt;Whoops!&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;failed_text&quot;</span>&gt;No internet connections found. Check your connection or try again!&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;no_internet_text&quot;</span>&gt;No Internet Connection!&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;no_category_found&quot;</span>&gt;No category found!!&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;no_post_found&quot;</span>&gt;if you want to continue search, please try enter another keyword!&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;msg_search_input&quot;</span>&gt;Please Insert Keyword&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+
+<span style="color:#808080;font-style:italic;">&lt;!--favorite--&gt;
+</span>&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;favorite_add&quot;</span>&gt;Add to Favorite&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;favorite_remove&quot;</span>&gt;Remove from Favorite&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;favorite_added&quot;</span>&gt;Added to Favorite&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;favorite_removed&quot;</span>&gt;Removed from Favorite&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;no_favorite_found&quot;</span>&gt;Your favorite list is empty because you don\&#39;t add any videos in the favorite menu&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+
+<span style="color:#808080;font-style:italic;">&lt;!--others--&gt;
+</span>&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;press_again_to_exit&quot;</span>&gt;Press again to exit app&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;video_count_text&quot;</span>&gt;video(s)&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;views_count&quot;</span>&gt;views&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;btn_retry&quot;</span>&gt;Retry&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;search&quot;</span>&gt;Search&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;search_text&quot;</span>&gt;Search<span style="color:#0000ff;font-weight:bold;">&amp;#8230;</span>&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;
+&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">&quot;share&quot;</span>&gt;Share&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt;</pre>
+</section>
+<section id="splash_image_and_other_required_image_assets">
+	<div class="page-header"><h3>Splash Image and other Required Image Assets</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	1.&nbsp;Open&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">app &rarr; res &rarr; drawable</span>&nbsp;and replace with your image or icon, all image are placed on&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">drawable-hdpi</span>&nbsp;folder</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	2.&nbsp;you also can change every image in app like via Explorer, open Explore and go to your project directory, select&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">YourVideosChannel\app\src\main\res\drawable-hdpi</span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	3.&nbsp;Replace every image which you need to custom the application and highly recommended you using same resolution for each image</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<img alt="" src="assets/images/image_14.png" style="width: 1024px; height: 322px;"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<img alt="" src="assets/images/image_3.jpg" style="width: 1024px; height: 737px;"></div>
+</section>
+<section id="optional_layout_customization">
+	<div class="page-header"><h3>Optional Layout Customization</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	1. Open&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">app &rarr; java &rarr; yourpackagename &rarr;</span>&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Config.java</span></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	2. You can make some customization or disable some features if you don&#39;t want it, by set :</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	&nbsp; &nbsp; - value&nbsp;<span style="font-family: inherit; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; vertical-align: baseline;">true&nbsp;</span>to Enable AdMob Ads</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	&nbsp; &nbsp; - value&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">false&nbsp;</span>to Disable AdMob Ads</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<pre style="color: rgb(0, 0, 0); font-family: &quot;Courier New&quot;; font-size: 9pt;">
+<span style="color:#808080;font-style:italic;">//layout customization
+</span><span style="color:#000080;font-weight:bold;">public static final boolean </span><span style="color:#660e7a;font-weight:bold;font-style:italic;">ENABLE_TAB_LAYOUT </span>= <span style="color:#000080;font-weight:bold;">true</span>;
+<span style="color:#000080;font-weight:bold;">public static final boolean </span><span style="color:#660e7a;font-weight:bold;font-style:italic;">ENABLE_SINGLE_ROW_COLUMN </span>= <span style="color:#000080;font-weight:bold;">false</span>;
+<span style="color:#000080;font-weight:bold;">public static final boolean </span><span style="color:#660e7a;font-weight:bold;font-style:italic;">FORCE_PLAYER_TO_LANDSCAPE </span>= <span style="color:#000080;font-weight:bold;">false</span>;
+<span style="color:#000080;font-weight:bold;">public static final boolean </span><span style="color:#660e7a;font-weight:bold;font-style:italic;">ENABLE_VIEW_COUNT </span>= <span style="color:#000080;font-weight:bold;">true</span>;
+<span style="color:#000080;font-weight:bold;">public static final boolean </span><span style="color:#660e7a;font-weight:bold;font-style:italic;">ENABLE_TIME_AGO </span>= <span style="color:#000080;font-weight:bold;">true</span>;</pre>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="rtl_right_to_left_mode">
+	<div class="page-header"><h3>RTL (Right To Left) Mode</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	RTL (Right-to-left) means generally refers to support of languages that are written from right to left, example Language which using RTL mode e.g : Arabic Language, etc, if you want to Enable RTL mode in the app :</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+		1. Open &rarr; app &rarr; java &rarr; yourpackagename &rarr;&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Config.java</span></div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+		2. set value true in the&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">ENABLE_RTL_MODE</span></div>
+</div>
+<pre style="color: rgb(56, 56, 56); font-family: Consolas;">
+<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 0);"><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 128);">public static final boolean </span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: bold; font-style: italic; font-family: inherit; vertical-align: baseline; color: rgb(102, 14, 122);">ENABLE_RTL_MODE </span>= </span><b>true</b>;</pre>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	3. then, in the&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">build.gradle (Module: app)</span>, set minSdkVersion to 17, because RTL Mode only can work in Android Api 17 (Jelly Bean) and above.</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<img alt="" src="assets/images/image_5.jpg" style="width: 1024px; height: 577px;"></p>
+</section>
+<section id="generated_signed_apk">
+	<div class="page-header"><h3>Generated Signed APK</h3><hr class="notop"></div>
+<div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		To sign your app in release mode in Android Studio, follow these steps:</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		1. On the menu bar, click&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Build&nbsp;</span>&rarr;&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Generate Signed APK.</span></div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">&nbsp; &nbsp;&nbsp;</span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;">If you already have a keystore, go to step 4.</span></div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		2. On the Generate Signed APK Wizard window, click Create new to create a new keystore.</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		3. On the New Key Store window, provide the required information, your key should be valid for at least 25 years, so you can sign app updates with the same key through the lifespan of your app.</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		4. On the Generate Signed APK Wizard window, select a keystore, a private key, and enter the passwords for both. Then click Next</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		5. On the next window, select a destination for the signed APK and Signature Versions.</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		6. Select Signature Version :&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">V1 (Jar Signature)</span></div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+		7. click Finish and the signed apk will generated</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-family: arial, sans-serif; font-size: 12.8px;"><img alt="" src="assets/images/image_8.jpg"  ></span></div>
+</section>
+<section id="graphics">
+	<div class="page-header"><h3>Graphics</h3><hr class="notop"></div>
+<p>
+	<span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; line-height: 18px;">You will find all image into /res/drawable/, /res/drawable-mdpi/, /res/drawable-hdpi/, /res/drawable-xhdpi/ folder. Just create your own graphics and replace those files. Create seperate graphics of different device screen sizes &amp; place them into other drawble folders (drawable-hdpi &amp; drawable-xhdpi) with same file name found at drawable-mdpi folder. Check here for more information:&nbsp;</span><a href="http://developer.android.com/design/style/devices-displays.html" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration: none; cursor: pointer; line-height: 18px;">Devices and Displays</a>&nbsp;<span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; line-height: 18px;">and&nbsp;</span><a href="http://developer.android.com/guide/practices/screens_support.html" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration: none; cursor: pointer; line-height: 18px;">Supporting Multiple Screens</a><span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; line-height: 18px;">.</span></p>
+</section>
+<section id="rating">
+	<div class="page-header"><h3>Rating</h3><hr class="notop"></div>
+<p>
+	<span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; line-height: 18px;">If you like our app, we will highly appreciate if you can provide us a rating of 5. You can rate us from your CodeCanyon Menu &gt; <a href="http://codecanyon.net/downloads">Download page.</a></span></p>
+<p>
+	&nbsp;</p>
+<hr>
+<p>
+	<span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; line-height: 18px;">Once again, thank you so much for purchasing this app. As I said at the beginning, I&#39;d be glad to help you if you have any questions relating to this app. No guarantees, but I&#39;ll do my best to assist. If you have a more general question relating to the apps on CodeCanyon, you might consider visiting the &quot;FAQ / Support&quot; section and asking your question in the &quot;Comments&quot; section at CodeCanyon app detail page.</span></p>
+</section>
+
+	</div>
+</body>
+</html>
